@@ -51,10 +51,7 @@
             <i class="fas fa-user-circle fa-fw"></i>
           </a>
           <div class="dropdown-menu dropdown-menu-right" aria-labelledby="userDropdown">
-            <a class="dropdown-item" href="#">Settings</a>
-            <a class="dropdown-item" href="#">Activity Log</a>
-            <div class="dropdown-divider"></div>
-            <a class="dropdown-item" href="#" data-toggle="modal" data-target="#logoutModal">Logout</a>
+            <a class="dropdown-item" href="" data-toggle="modal" data-target="#logoutModal">Sair</a>
           </div>
         </li>
       </ul>
@@ -112,22 +109,11 @@
       <div id="content-wrapper">
 
         <div class="container-fluid">
-
-          <!-- Breadcrumbs-->
-          <!-- Barrinha Cinza -->
-          <ol class="breadcrumb">
-            <li class="breadcrumb-item">
-              <a href="index.html">Dashboard</a>
-            </li>
-            <li class="breadcrumb-item active">Blank Page</li>
-          </ol>
-
           <!-- Page Content -->
           <!--aqui é o corpo-->
           <!-- exibe home -->
           {% if exibeInicio == True %}
             <h3>{{ msg }}</h3>
-            {{produto}}
           {% endif %}
 
           <!-- exibe produtos -->
@@ -149,6 +135,7 @@
             <h3>{{ msg }}</h3>
             <form action="" method='POST'>
               {% csrf_token %}
+              <div class = "form-group">
               <label for="codigo">
               Codigo: <input type="text" id="codigo" name="codigo" value="" minlength="3" pattern="[0-9]+$" required><br>
               </label><br>
@@ -220,15 +207,14 @@
           {% endif %}
 
 
-          <!-- alert -->
-          <!--
+
           {% if exibeAlert == True %}
             <script>
               window.alert('{{msg_alert}}');
               window.location.href='{{link}}'
             </script>
           {% endif %}
-          -->
+
         </div>
         <!-- /.container-fluid -->
 
@@ -236,7 +222,7 @@
         <footer class="sticky-footer">
           <div class="container my-auto">
             <div class="copyright text-center my-auto">
-              <span>Copyright © SisEstoque 2018</span>
+              <span>Copyright © Felipe Acelino 2018</span>
             </div>
           </div>
         </footer>
@@ -257,15 +243,15 @@
       <div class="modal-dialog" role="document">
         <div class="modal-content">
           <div class="modal-header">
-            <h5 class="modal-title" id="exampleModalLabel">Ready to Leave?</h5>
+            <h5 class="modal-title" id="exampleModalLabel">Tem certeza?</h5>
             <button class="close" type="button" data-dismiss="modal" aria-label="Close">
               <span aria-hidden="true">×</span>
             </button>
           </div>
-          <div class="modal-body">Select "Logout" below if you are ready to end your current session.</div>
+          <div class="modal-body">Selecione "Sair" se você quer sair da sessão atual.</div>
           <div class="modal-footer">
-            <button class="btn btn-secondary" type="button" data-dismiss="modal">Cancel</button>
-            <a class="btn btn-primary" href="login.html">Logout</a>
+            <button class="btn btn-secondary" type="button" data-dismiss="modal">Cancelar</button>
+            <a class="btn btn-primary" href="/logout">Sair</a>
           </div>
         </div>
       </div>
