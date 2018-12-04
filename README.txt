@@ -11,4 +11,4 @@ Vendedor:
 login: vendedor
 senha: testando
 
-* Se você quiser cadastrar mais usuários, basta acessar http://localhost:8000/admin e adicionar um novo usuário, e depois lembre-se de atribuir esse usuário a um grupo: vendedor e/ou gerente.
+* Se você quiser cadastrar mais usuários basta acessar http://localhost:8000/admin e adicionar um novo usuário, e depois lembre-se de atribuir esse usuário a um grupo: vendedor e/ou gerente.
